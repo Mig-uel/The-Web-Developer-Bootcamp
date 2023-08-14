@@ -1,0 +1,26 @@
+body {
+  font-family: Helvetica;
+
+  margin: 0 auto;
+  text-align: center;
+}
+
+div {
+  display: inline-block;
+  padding: 50px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.1s ease-in-out;
+  font-size: 12px;
+}
+span {
+  display: block;
+  margin: 5px;
+}
+
+div:hover {
+  background-color: grey;
+}

@@ -11,3 +11,7 @@ function scream() {
 }
 
 button.onmouseenter = scream // passing the function, not executing. executed when button is pressed
+
+document.querySelector('h1').onmouseenter = function () {
+  alert('you entered the h1')
+}

@@ -1,66 +1,55 @@
-const p1Button = document.querySelector('#p1Button')
-const p2Button = document.querySelector('#p2Button')
-const resetButton = document.querySelector('#reset')
+const p1 = {
+  score: 0,
+  button: document.querySelector('#p1Button'),
+  display: document.querySelector('#p1'),
+}
 
-const p1 = document.querySelector('#p1')
-const p2 = document.querySelector('#p2')
+const p2 = {
+  score: 0,
+  button: document.querySelector('#p2Button'),
+  display: document.querySelector('#p2'),
+}
+
+const resetButton = document.querySelector('#reset')
 const max = document.querySelector('#max')
 
-p1Button.disabled = true
-p2Button.disabled = true
+// disable buttons at start
+p1.button.disabled = true
+p2.button.disabled = true
 
-let p1Score = 0
-let p2Score = 0
 let winningScore = null
 let isGameOver = false
 
-p1Button.addEventListener('click', () => {
+const updateScores = (player, opponent) => {
   if (!isGameOver) {
-    p1Score += 1
+    player.score += 1
 
-    if (p1Score === winningScore) {
+    if (player.score === winningScore) {
       isGameOver = true
-      p1.classList.add('has-text-success')
-      p2.classList.add('has-text-danger')
 
-      p1Button.disabled = true
-      p2Button.disabled = true
+      player.display.classList.add('has-text-success')
+      opponent.display.classList.add('has-text-danger')
+
+      player.button.disabled = true
+      opponent.button.disabled = true
     }
 
-    p1.textContent = p1Score
+    player.display.textContent = player.score
   }
-})
+}
 
-p2Button.addEventListener('click', () => {
-  if (!isGameOver) {
-    p2Score += 1
-
-    if (p2Score === winningScore) {
-      isGameOver = true
-      p2.classList.add('has-text-success')
-      p1.classList.add('has-text-danger')
-
-      p1Button.disabled = true
-      p2Button.disabled = true
-    }
-
-    p2.textContent = p2Score
-  }
-})
+p1.button.addEventListener('click', () => updateScores(p1, p2))
+p2.button.addEventListener('click', () => updateScores(p2, p1))
 
 const reset = () => {
   isGameOver = false
-  p1Score = 0
-  p2Score = 0
 
-  p1.textContent = p1Score
-  p2.textContent = p2Score
-
-  p1.classList.remove('has-text-success', 'has-text-danger')
-  p2.classList.remove('has-text-success', 'has-text-danger')
-
-  p1Button.disabled = false
-  p2Button.disabled = false
+  for (let p of [p1, p2]) {
+    p.score = 0
+    p.display.textContent = p.score
+    p.display.classList.remove('has-text-success', 'has-text-danger')
+    p.button.disabled = false
+  }
 }
 
 max.addEventListener('change', () => {

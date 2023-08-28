@@ -9,18 +9,30 @@ const fakeRequestPromise = (url) => {
   })
 }
 
-fakeRequestPromise('https;//yelp.com/api/Crunch/page-1')
+// fakeRequestPromise('https;//yelp.com/api/Crunch/page-1')
+//   .then((res) => {
+//     console.log(res)
+
+//     fakeRequestPromise('https://yelp.com/api/Crunch/page-2')
+//       .then((res) => {
+//         console.log(res)
+
+//         fakeRequestPromise('https://yelp.com/api/Crunch/page-3')
+//           .then((res) => console.log(res))
+//           .catch((err) => console.log(err))
+//       })
+//       .catch((err) => console.log(err))
+//   })
+//   .catch((err) => console.log(err))
+
+fakeRequestPromise('https://youtube.com/api/Drake/page-1')
   .then((res) => {
     console.log(res)
-
-    fakeRequestPromise('https://yelp.com/api/Crunch/page-2')
-      .then((res) => {
-        console.log(res)
-
-        fakeRequestPromise('https://yelp.com/api/Crunch/page-3')
-          .then((res) => console.log(res))
-          .catch((err) => console.log(err))
-      })
-      .catch((err) => console.log(err))
+    return fakeRequestPromise('https://youtube.com/api/Drake/page-2')
   })
+  .then((res) => {
+    console.log(res)
+    return fakeRequestPromise('https://youtube.com/api/Drake/page-3')
+  })
+  .then((res) => console.log(res))
   .catch((err) => console.log(err))

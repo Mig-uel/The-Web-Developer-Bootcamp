@@ -1,0 +1,5 @@
+~: home directory
+ls: list of files and folders/directories
+pwd: print working directory
+cd: change directory
+cd..: back up one directory

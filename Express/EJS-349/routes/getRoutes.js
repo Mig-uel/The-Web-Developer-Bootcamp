@@ -8,7 +8,16 @@ const randomNumberGetRoute = (req, res) => {
   res.render('random', { randomNumber })
 }
 
+const subredditGetRoute = (req, res) => {
+  const {
+    params: { id },
+  } = req
+
+  res.render('subreddit', { id })
+}
+
 module.exports = {
   defaultGetRoute,
   randomNumberGetRoute,
+  subredditGetRoute,
 }

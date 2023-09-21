@@ -9,6 +9,12 @@ app.use((req, res, next) => {
   next()
 })
 
+// route with params (:id)
+app.get('/r/:id', ({ params: { id } }, res) => {
+  // destructuring from req object to get params
+  res.send(`<h1>THIS IS THE SUBREDDIT: r/${id}</h1>`)
+})
+
 // /cats route (GET)
 app.get('/cats', (req, res) => {
   res.send('<h1>Cats</h1>')

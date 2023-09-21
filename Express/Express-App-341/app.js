@@ -2,7 +2,7 @@ const express = require('express')
 const port = 3000
 const app = express()
 
-app.use(() => {
+app.use((req, res) => {
   console.log('NEW REQUEST!')
 })
 

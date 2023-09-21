@@ -10,6 +10,13 @@
 <body>
   <h1>Random Number Generator</h1>
   <p><%= randomNumber %></p>
+
+  <% if (randomNumber % 2 === 0) { %>
+  <h4>You generated an even number!</h4>
+  <% } else { %>
+  <h4>You generated an odd number!</h4>
+  <% } %>
+  
 </body>
 
 </html>

@@ -9,9 +9,24 @@ app.use((req, res, next) => {
   next()
 })
 
+// route with query strings
+app.get('/search', (req, res) => {
+  const { query } = req
+
+  res.write('<h1>Search</h1>')
+
+  if (!query.q) res.write('NOTHING FOUND, IF NOTHING SEARCHED!')
+  else res.write(`<p>Searched for: ${query.q}`)
+
+  console.log(query)
+})
+
 // route with params (:id)
-app.get('/r/:id', ({ params: { id } }, res) => {
-  // destructuring from req object to get params
+app.get('/r/:id', (req, res) => {
+  const {
+    params: { id },
+  } = req
+
   res.send(`<h1>THIS IS THE SUBREDDIT: r/${id}</h1>`)
 })
 

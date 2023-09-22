@@ -8,12 +8,14 @@ const {
   defaultGetRoute,
   randomNumberGetRoute,
   subredditGetRoute,
+  catsGetRoute,
 } = require('./routes/getRoutes')
 
 const port = 3000
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/views'))
 
+app.get('/cats', catsGetRoute)
 app.get('/r/:id', subredditGetRoute)
 app.get('/random', randomNumberGetRoute)
 app.get('/', defaultGetRoute)

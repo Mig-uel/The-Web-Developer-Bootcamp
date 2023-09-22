@@ -16,8 +16,15 @@ const subredditGetRoute = (req, res) => {
   res.render('subreddit', { id })
 }
 
+const catsGetRoute = (req, res) => {
+  const cats = ['Blue', 'Rocket', 'Monty', 'Stephanie', 'Winston']
+
+  res.render('cats', { cats })
+}
+
 module.exports = {
   defaultGetRoute,
   randomNumberGetRoute,
   subredditGetRoute,
+  catsGetRoute,
 }

@@ -1,4 +1,4 @@
-const { comments } = require('../comments')
+let { comments } = require('../comments')
 
 const patchAComment = (req, res) => {
   const { id } = req.params
@@ -11,4 +11,4 @@ const patchAComment = (req, res) => {
   res.redirect('/comments')
 }
 
-module.exports = patchAComment
+module.exports = { patchAComment }

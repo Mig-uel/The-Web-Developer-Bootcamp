@@ -9,7 +9,8 @@ const {
   getEditCommentForm,
 } = require('./routes/getRoutes')
 const { postComment } = require('./routes/postRoutes')
-const patchAComment = require('./routes/patchRoutes')
+const { patchAComment } = require('./routes/patchRoutes')
+const { deleteAComment } = require('./routes/deleteRoutes')
 
 const app = express()
 const port = 3000
@@ -28,6 +29,8 @@ app.get('/comments/edit/:id', getEditCommentForm)
 app.patch('/comments/:id', patchAComment)
 
 app.post('/comments', postComment)
+
+app.delete('/comments/:id', deleteAComment)
 
 app.listen(port, () => {
   console.log(`SERVER STARTED ON PORT: ${port}`)

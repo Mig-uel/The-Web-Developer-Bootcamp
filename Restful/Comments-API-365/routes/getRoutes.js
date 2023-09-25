@@ -1,4 +1,4 @@
-const { comments } = require('../comments')
+let { comments } = require('../comments')
 
 const getAllComments = (req, res) => {
   res.render('comments/index', { comments })

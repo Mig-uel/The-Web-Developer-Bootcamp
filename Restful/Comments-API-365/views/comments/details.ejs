@@ -11,7 +11,12 @@
   <h1>Details (Comment #<%= comment.id %>)</h1>
   <p><%= comment.comment %> - <b><%= comment.username %></b></p>
 
-  <a href="/comments">View All Comments</a>
+  <a href="/comments">View All Comments</a> <span>|</span>
+  <a href="/comments/edit/<%= comment.id %>">Edit</a> <span>|</span>
+
+  <form action="/comments/<%= comment.id %>?_method=DELETE" method="post">
+    <button>Delete</button>
+  </form>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 const { v4: uuid } = require('uuid')
 
-const comments = [
+let comments = [
   {
     id: uuid(),
     username: 'Todd',

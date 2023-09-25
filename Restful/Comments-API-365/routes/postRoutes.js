@@ -1,4 +1,4 @@
-const { comments } = require('../comments')
+let { comments } = require('../comments')
 const { v4: uuid } = require('uuid')
 
 const postComment = (req, res) => {

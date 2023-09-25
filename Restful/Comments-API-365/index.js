@@ -1,7 +1,11 @@
 const express = require('express')
 const path = require('path')
 
-const { getAllComments, getNewCommentForm } = require('./routes/getRoutes')
+const {
+  getAllComments,
+  getNewCommentForm,
+  getAComment,
+} = require('./routes/getRoutes')
 const { postComment } = require('./routes/postRoutes')
 
 const app = express()
@@ -14,6 +18,7 @@ app.set('view engine', 'ejs')
 
 app.get('/comments', getAllComments)
 app.get('/comments/new', getNewCommentForm)
+app.get('/comments/:id', getAComment)
 
 app.post('/comments', postComment)
 

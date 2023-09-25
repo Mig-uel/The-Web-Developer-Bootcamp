@@ -1,21 +1,23 @@
+const { v4: uuid } = require('uuid')
+
 const comments = [
   {
-    id: 1,
+    id: uuid(),
     username: 'Todd',
     comment: 'lol that is so funny',
   },
   {
-    id: 2,
+    id: uuid(),
     username: 'Skyler',
     comment: 'I like to go birdwatching',
   },
   {
-    id: 3,
+    id: uuid(),
     username: 'Sk8erBoi',
     comment: 'Plz delete your account, Todd',
   },
   {
-    id: 4,
+    id: uuid(),
     username: 'onlysayswoof',
     comment: 'woof woof woof',
   },

@@ -11,7 +11,7 @@ const getNewCommentForm = (req, res) => {
 const getAComment = (req, res) => {
   const { id } = req.params
 
-  const comment = comments.find((c) => c.id === +id)
+  const comment = comments.find((c) => c.id === id)
   res.render('comments/details', { comment })
 }
 

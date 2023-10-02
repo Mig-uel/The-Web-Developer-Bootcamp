@@ -6,14 +6,22 @@ mongoose
   .then(() => console.log('CONNECTION STARTED...'))
   .catch((e) => console.log(e))
 
-const bike = new Product({
-  name: 'Bike Helmet',
-  price: 19.5,
-  categories: ['Cycling', 'Safety'],
-})
+// const bike = new Product({
+//   name: 'Tire Pump',
+//   price: 19.5,
+//   categories: ['Cycling'],
+// })
 
-bike
-  .save()
+// bike
+//   .save()
+//   .then((data) => console.log(data))
+//   .catch((e) => console.log(e))
+
+Product.findOneAndUpdate(
+  { name: 'Tire Pump' },
+  { price: 19.99 },
+  { new: true, runValidators: true }
+)
   .then((data) => console.log(data))
   .catch((e) => console.log(e))
 

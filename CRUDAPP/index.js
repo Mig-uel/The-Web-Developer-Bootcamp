@@ -2,6 +2,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
 
+const Product = require('./models/product.model')
+
 const app = express()
 const port = 3000
 

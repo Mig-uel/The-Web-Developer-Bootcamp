@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Details</title>
+
+  <style>
+    form {
+      display: inline;
+    }
+  </style>
 </head>
 
 <body>
@@ -13,6 +19,10 @@
 
   <footer>
     <a href="/campgrounds/<%=campground._id%>/edit">Edit Campground</a>
+    <span>|</span>
+    <form action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
+      <button>Delete Campground</button>
+    </form>
     <span>|</span>
     <a href="/campgrounds">All Campgrounds</a>
   </footer>

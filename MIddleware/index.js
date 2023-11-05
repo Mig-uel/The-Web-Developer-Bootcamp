@@ -25,6 +25,16 @@ app.use('/dogs', (req, res, next) => {
   return next()
 })
 
+app.use((req, res, next) => {
+  const { password } = req.query
+
+  if (password === 'chickennugget') {
+    return next()
+  }
+
+  res.send('SORRY YOU NEED A PASSWORD!')
+})
+
 //Routes
 app.get('/', (req, res) => {
   // console.log(req.requestTime)
@@ -34,6 +44,10 @@ app.get('/', (req, res) => {
 
 app.get('/dogs', (req, res) => {
   res.send('WOOF WOOF!')
+})
+
+app.get('/secret', (req, res) => {
+  res.send('YOU ARE IN!')
 })
 
 // 404 Page

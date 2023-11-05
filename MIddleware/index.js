@@ -18,14 +18,15 @@ app.use(morgan('tiny'))
 //   return next()
 // })
 
-// Middleware w/ Path
+// Middleware w/ path
 app.use('/dogs', (req, res, next) => {
   console.log('I LOVE DOGS <3')
 
   return next()
 })
 
-app.use((req, res, next) => {
+// Middleware function to be passed to GET route
+const verifyPassword = (req, res, next) => {
   const { password } = req.query
 
   if (password === 'chickennugget') {
@@ -33,7 +34,7 @@ app.use((req, res, next) => {
   }
 
   res.send('SORRY YOU NEED A PASSWORD!')
-})
+}
 
 //Routes
 app.get('/', (req, res) => {
@@ -46,11 +47,12 @@ app.get('/dogs', (req, res) => {
   res.send('WOOF WOOF!')
 })
 
-app.get('/secret', (req, res) => {
+// Route with Middleware (middleware callback, route callback)
+app.get('/secret', verifyPassword, (req, res) => {
   res.send('YOU ARE IN!')
 })
 
-// 404 Page
+// 404 page
 app.use((req, res) => {
   res.send('404 NOT FOUND...')
 })

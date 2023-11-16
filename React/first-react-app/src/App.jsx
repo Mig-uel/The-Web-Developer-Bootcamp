@@ -5,8 +5,16 @@ import Greeter from './components/greeter.component'
 import Heading from './components/heding.component'
 import ListPicker from './components/listpicket.component'
 import ColorList from './components/colorlist.component'
+import ShoppingList from './components/shoppinglist.component'
 
 function App() {
+  const data = [
+    { item: 'eggs', qty: 12, completed: false },
+    { item: 'milk', qty: 1, completed: true },
+    { item: 'chicken breasts', qty: 4, completed: false },
+    { item: 'eggs', qty: 6, completed: true },
+  ]
+
   return (
     <>
       {/* <Heading color='magenta' text={'Welcome!'} /> */}
@@ -19,7 +27,8 @@ function App() {
       <DoubleDice />
       <DoubleDice /> */}
 
-      <ColorList colors={['red', 'pink', 'purple', 'teal']} />
+      {/* <ColorList colors={['red', 'pink', 'purple', 'teal']} /> */}
+      <ShoppingList items={data} />
     </>
   )
 }

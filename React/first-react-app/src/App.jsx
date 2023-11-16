@@ -26,7 +26,7 @@ function App() {
 
       {/* <h1>Shopping List</h1>
       <ShoppingList items={data} /> */}
-      <Clicker />
+      <Clicker message='STOP CLICKING ME!' label='DO NOT CLICK' />
     </>
   )
 }

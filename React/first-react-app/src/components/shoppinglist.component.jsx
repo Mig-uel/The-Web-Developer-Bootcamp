@@ -1,13 +1,11 @@
+import ShoppingListItem from './shoppinglistitem.component'
+
 const ShoppingList = ({ items }) => {
+  console.log(items)
   return (
     <ul>
-      {items.map((item) => (
-        <li
-          key={item}
-          style={{ textDecoration: item.completed ? 'line-through' : 'none' }}
-        >
-          {item.item} - {item.qty}
-        </li>
+      {items.map((i) => (
+        <ShoppingListItem item={i} key={i.id} />
       ))}
     </ul>
   )

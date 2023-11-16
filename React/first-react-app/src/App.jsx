@@ -9,10 +9,10 @@ import ShoppingList from './components/shoppinglist.component'
 
 function App() {
   const data = [
-    { item: 'eggs', qty: 12, completed: false },
-    { item: 'milk', qty: 1, completed: true },
-    { item: 'chicken breasts', qty: 4, completed: false },
-    { item: 'eggs', qty: 6, completed: true },
+    { id: 1, item: 'eggs', qty: 12, completed: false },
+    { id: 2, item: 'milk', qty: 1, completed: true },
+    { id: 3, item: 'chicken breasts', qty: 4, completed: false },
+    { id: 4, item: 'eggs', qty: 6, completed: true },
   ]
 
   return (
@@ -28,6 +28,8 @@ function App() {
       <DoubleDice /> */}
 
       {/* <ColorList colors={['red', 'pink', 'purple', 'teal']} /> */}
+
+      <h1>Shopping List</h1>
       <ShoppingList items={data} />
     </>
   )

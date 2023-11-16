@@ -9,6 +9,7 @@ import ShoppingList from './components/shoppinglist.component'
 import data from './assets/data'
 import Clicker from './components/clicker.component'
 import Counter from './components/counter.component'
+import Toggler from './components/toggler.component'
 
 function App() {
   return (
@@ -29,7 +30,9 @@ function App() {
       <ShoppingList items={data} /> */}
       {/* <Clicker message='STOP CLICKING ME!' label='DO NOT CLICK' /> */}
 
-      <Counter />
+      {/* <Counter /> */}
+
+      <Toggler />
     </>
   )
 }

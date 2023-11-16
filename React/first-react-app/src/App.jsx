@@ -8,6 +8,7 @@ import ColorList from './components/colorlist.component'
 import ShoppingList from './components/shoppinglist.component'
 import data from './assets/data'
 import Clicker from './components/clicker.component'
+import Counter from './components/counter.component'
 
 function App() {
   return (
@@ -26,7 +27,9 @@ function App() {
 
       {/* <h1>Shopping List</h1>
       <ShoppingList items={data} /> */}
-      <Clicker message='STOP CLICKING ME!' label='DO NOT CLICK' />
+      {/* <Clicker message='STOP CLICKING ME!' label='DO NOT CLICK' /> */}
+
+      <Counter />
     </>
   )
 }

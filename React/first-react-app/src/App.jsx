@@ -7,6 +7,7 @@ import ListPicker from './components/listpicket.component'
 import ColorList from './components/colorlist.component'
 import ShoppingList from './components/shoppinglist.component'
 import data from './assets/data'
+import Clicker from './components/clicker.component'
 
 function App() {
   return (
@@ -23,8 +24,9 @@ function App() {
 
       {/* <ColorList colors={['red', 'pink', 'purple', 'teal']} /> */}
 
-      <h1>Shopping List</h1>
-      <ShoppingList items={data} />
+      {/* <h1>Shopping List</h1>
+      <ShoppingList items={data} /> */}
+      <Clicker />
     </>
   )
 }

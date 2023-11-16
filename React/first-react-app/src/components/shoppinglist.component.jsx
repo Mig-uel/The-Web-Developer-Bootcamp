@@ -5,7 +5,7 @@ const ShoppingList = ({ items }) => {
   return (
     <ul>
       {items.map((i) => (
-        <ShoppingListItem item={i} key={i.id} />
+        <ShoppingListItem {...i} key={i.id} />
       ))}
     </ul>
   )

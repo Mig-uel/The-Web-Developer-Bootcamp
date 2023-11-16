@@ -1,4 +1,4 @@
-const ShoppingListItem = ({ item: { item, qty, completed } }) => {
+const ShoppingListItem = ({ item, qty, completed }) => {
   return (
     <li style={{ textDecoration: completed ? 'line-through' : 'none' }}>
       {item} - {qty}

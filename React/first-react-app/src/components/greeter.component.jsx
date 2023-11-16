@@ -1,5 +1,5 @@
-const Greeter = () => {
-  return <h1>Hi there...</h1>
+const Greeter = ({ name }) => {
+  return <h1>Welcome, {name}!</h1>
 }
 
 export default Greeter

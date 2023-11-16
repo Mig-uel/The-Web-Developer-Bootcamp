@@ -1,10 +1,10 @@
 import './App.css'
-import Chicken from './components/chicken.component'
+import Greeter from './components/greeter.component'
 
 function App() {
   return (
     <>
-      <Chicken />
+      <Greeter name='Miguel' />
     </>
   )
 }

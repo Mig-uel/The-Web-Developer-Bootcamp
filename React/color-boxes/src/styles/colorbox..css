@@ -1,0 +1,16 @@
+.colorbox {
+  width: 100px;
+
+  /* flex-basis: 100px; */
+  flex-grow: 1;
+}
+
+.colorboxes-container {
+  height: 500px;
+  width: 450px;
+
+  background-color: #fff;
+
+  display: flex;
+  flex-wrap: wrap;
+}

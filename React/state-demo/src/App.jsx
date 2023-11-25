@@ -1,6 +1,7 @@
 import './App.css'
 import Counter from './components/counter.component'
 import Dumbo from './components/dumbo.component'
+import ScoreKeeper from './components/scorekeeper.component'
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
 
       <h1>Dumbo</h1>
       <Dumbo />
+
+      <h1>ScoreKeeper</h1>
+      <ScoreKeeper />
     </>
   )
 }

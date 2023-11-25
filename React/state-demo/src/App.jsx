@@ -23,3 +23,8 @@ function App() {
 }
 
 export default App
+
+// these don't mutate the original array (aka create  new array from old array)
+// add to an array: spread and add the new one literally
+// removing from an array: use filter() method to filter out
+// update all elements in an array: use map() method

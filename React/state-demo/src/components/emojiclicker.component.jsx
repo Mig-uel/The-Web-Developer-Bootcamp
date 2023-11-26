@@ -12,6 +12,9 @@ const EmojiClicker = () => {
     setEmojis((oldEmojis) => oldEmojis.filter((e) => e.id !== id)) // filters out the array from the id passed in and returns new array
   }
 
+  const makeEverythingAHeart = () =>
+    setEmojis((oldEmojis) => oldEmojis.map((e) => ({ ...e, emoji: '❤️' }))) // using callback to access older version of state, then mapping through each object element, and spreading contents (id) but updating the emoji property and returning it
+
   return (
     <div>
       {emojis.map((e) => (
@@ -26,6 +29,7 @@ const EmojiClicker = () => {
       <br />
       <p>(click an emoji to remove it)</p>
       <button onClick={addEmoji}>Add Emoji</button>
+      <button onClick={makeEverythingAHeart}>❤️</button>
     </div>
   )
 }

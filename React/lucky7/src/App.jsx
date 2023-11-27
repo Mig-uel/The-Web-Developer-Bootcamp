@@ -7,8 +7,8 @@ const allSameValues = (dice) => dice.every((v) => v === dice[0])
 function App() {
   return (
     <>
-      <LuckyN winCheck={lessThan4} />
-      <LuckyN winCheck={allSameValues} />
+      <LuckyN winCheck={lessThan4} title={'Roll Less Than 4'} />
+      <LuckyN winCheck={allSameValues} title={'Roll Same Number'} />
     </>
   )
 }

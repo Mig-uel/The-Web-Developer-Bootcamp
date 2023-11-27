@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { getRolls } from '../utils/utils'
 import Dice from './dice.component'
+import Button from './button.component'
 
 const LuckyN = ({ title = 'Dice Game', numDice = 2, winCheck }) => {
   const [dice, setDice] = useState(getRolls(numDice))
@@ -14,7 +15,7 @@ const LuckyN = ({ title = 'Dice Game', numDice = 2, winCheck }) => {
         {title} {isWinner && ': You Win!'}
       </h1>
       <Dice dice={dice} />
-      <button onClick={roll}>Re-Roll Dice</button>
+      <Button handleClick={roll}>Re-Roll Dice</Button>
     </main>
   )
 }

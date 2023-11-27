@@ -11,13 +11,13 @@ function App() {
       <Counter />
 
       <h1>Dumbo</h1>
-      <Dumbo />
+  <Dumbo /> */}
 
       <h1>ScoreKeeper</h1>
-      <ScoreKeeper /> */}
+      <ScoreKeeper numPlayers={10} target={5} />
 
-      <h1>Emoji Clicker</h1>
-      <EmojiClicker />
+      {/* <h1>Emoji Clicker</h1>
+      <EmojiClicker /> */}
     </>
   )
 }

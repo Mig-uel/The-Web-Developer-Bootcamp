@@ -1,9 +1,9 @@
-import Dice from './components/dice.component'
+import LuckyN from './components/luckyN.component'
 
 function App() {
   return (
     <>
-      <Dice dice={[1, 2, 3]} />
+      <LuckyN numDice={3} />
     </>
   )
 }

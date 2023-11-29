@@ -13,6 +13,8 @@ const ShoppingListForm = ({ addItem }) => {
     e.preventDefault()
 
     addItem(formData)
+
+    setFormData({ product: '', qty: 0 })
   }
 
   return (

@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import ShoppingListForm from './shopping-list-form.component'
 
+import { v4 as uuid } from 'uuid'
+
 const ShoppingList = () => {
   const [items, setItems] = useState([
-    { id: 1, product: 'Ham', qty: 2 },
-    { id: 2, product: 'Eggs', qty: 1 },
+    { id: uuid(), product: 'Ham', qty: 2 },
+    { id: uuid(), product: 'Eggs', qty: 1 },
   ])
 
   const addItem = (item) => {
-    setItems((prevItems) => [...prevItems, { ...item, id: 3 }])
+    setItems((prevItems) => [...prevItems, { ...item, id: uuid() }])
   }
 
   return (

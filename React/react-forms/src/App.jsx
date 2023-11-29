@@ -1,5 +1,11 @@
+import UsernameForm from './components/usernameform.component'
+
 function App() {
-  return <></>
+  return (
+    <>
+      <UsernameForm />
+    </>
+  )
 }
 
 export default App

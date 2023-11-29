@@ -5,8 +5,8 @@ const EnhancedSignupForm = () => {
 
   const handleUser = ({ target: { name, value } }) => {
     setUser((prevUser) => {
-      prevUser[name] = value
-      return { ...prevUser }
+      // prevUser[name] = value
+      return { ...prevUser, [name]: value } // computed value, reads the variable instead of literally making new key and value pair
     })
   }
 

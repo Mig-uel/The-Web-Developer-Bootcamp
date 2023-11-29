@@ -10,14 +10,16 @@ const UsernameForm = () => {
 
   return (
     <div>
+      <label htmlFor='username'>Enter a username:</label>
       <input
         onChange={updateUsername}
         type='text'
         name=''
-        id=''
+        id='username'
         placeholder='username'
         value={username}
       />
+      <p>Username: {username}</p>
       <button>Submit</button>
     </div>
   )

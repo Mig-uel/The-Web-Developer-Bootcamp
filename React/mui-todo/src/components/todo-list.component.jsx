@@ -3,18 +3,17 @@ import { List } from '@mui/material'
 import TodoItem from './todo-item.component'
 import TodoForm from './todo-form.component'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { v4 as uuid } from 'uuid'
 
-const initialTodos = [
-  { id: uuid(), text: 'Walk the dog', completed: false },
-  { id: uuid(), text: 'Walk the cat', completed: false },
-  { id: uuid(), text: 'Feed the fish', completed: false },
-  { id: uuid(), text: 'Feed the chickens', completed: false },
-]
-
 const TodoList = () => {
-  const [todos, setTodos] = useState(initialTodos)
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem('todos')) || []
+  )
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
 
   const removeTodo = (id) =>
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id))

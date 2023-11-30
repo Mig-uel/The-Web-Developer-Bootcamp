@@ -1,7 +1,8 @@
 import { Button, IconButton } from '@mui/material/'
-import './App.css'
-
 import AlarmIcon from '@mui/icons-material/Alarm'
+import RatingDemo from './rating-demo.component'
+
+import './App.css'
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <IconButton color='secondary' aria-label='add an alarm'>
         <AlarmIcon />
       </IconButton>
+
+      <RatingDemo />
     </div>
   )
 }

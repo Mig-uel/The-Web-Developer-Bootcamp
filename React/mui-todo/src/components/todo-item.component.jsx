@@ -9,24 +9,24 @@ import {
 
 import CommentIcon from '@mui/icons-material/Comment'
 
-const TodoItem = ({ todo: { id, text, completed } }) => {
+const TodoItem = ({
+  todo: { id, text, completed },
+  removeTodo,
+  toggleTodo,
+}) => {
   const labelId = `checkbox-list-label-${id}`
 
   return (
     <ListItem
       key={id}
       secondaryAction={
-        <IconButton edge='end' aria-label='comments'>
+        <IconButton edge='end' aria-label='comments' onClick={removeTodo}>
           <CommentIcon />
         </IconButton>
       }
       disablePadding
     >
-      <ListItemButton
-        role={undefined}
-        // onClick={handleToggle(value)}
-        dense
-      >
+      <ListItemButton role={undefined} dense>
         <ListItemIcon>
           <Checkbox
             edge='start'
@@ -34,6 +34,7 @@ const TodoItem = ({ todo: { id, text, completed } }) => {
             tabIndex={-1}
             disableRipple
             inputProps={{ 'aria-labelledby': labelId }}
+            onChange={toggleTodo}
           />
         </ListItemIcon>
         <ListItemText id={labelId} primary={text} />

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 const Counter = () => {
   const [count, setCount] = useState(0)
 
-  const increment = () => setCount((oldCount) => setCount(oldCount + 1))
+  const increment = () => setCount((oldCount) => oldCount + 1)
 
   return (
     <div>

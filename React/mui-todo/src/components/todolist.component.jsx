@@ -1,16 +1,7 @@
-import {
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Checkbox,
-  IconButton,
-  ListItemIcon,
-} from '@mui/material'
-
-import CommentIcon from '@mui/icons-material/Comment'
+import { List } from '@mui/material'
 
 import { useState } from 'react'
+import TodoItem from './todo-item.component'
 
 const initialTodos = [
   { id: 1, text: 'Walk the dog', completed: false },
@@ -24,38 +15,9 @@ const TodoList = () => {
 
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {todos.map((todo) => {
-        const labelId = `checkbox-list-label-${todo.id}`
-
-        return (
-          <ListItem
-            key={todo.id}
-            secondaryAction={
-              <IconButton edge='end' aria-label='comments'>
-                <CommentIcon />
-              </IconButton>
-            }
-            disablePadding
-          >
-            <ListItemButton
-              role={undefined}
-              // onClick={handleToggle(value)}
-              dense
-            >
-              <ListItemIcon>
-                <Checkbox
-                  edge='start'
-                  checked={todo.completed}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ 'aria-labelledby': labelId }}
-                />
-              </ListItemIcon>
-              <ListItemText id={labelId} primary={todo.text} />
-            </ListItemButton>
-          </ListItem>
-        )
-      })}
+      {todos.map((todo) => (
+        <TodoItem key={todo.id} todo={todo} />
+      ))}
     </List>
   )
 }

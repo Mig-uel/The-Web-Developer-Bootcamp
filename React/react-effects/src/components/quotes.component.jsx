@@ -1,36 +1,28 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Quotes = () => {
   const RANDOM_QUOTE_URL =
     'https://inspo-quotes-api.herokuapp.com/quotes/random'
 
-  const [quote, setQuote] = useState('')
-  const [author, setAuthor] = useState('')
+  const [quote, setQuote] = useState({})
 
   const fetchQuote = async () => {
     const res = await fetch(RANDOM_QUOTE_URL)
     const data = await res.json()
+    // console.log(data)
 
-    setQuote(data.quote.text)
-    setAuthor(data.quote.author)
+    setQuote(data.quote)
   }
 
   useEffect(() => {
-    ;(async () => {
-      const res = await fetch(RANDOM_QUOTE_URL)
-      const data = await res.json()
-
-      setQuote(data.quote.text)
-      setAuthor(data.quote.author)
-    })()
+    fetchQuote()
   }, [])
 
   return (
     <div>
-      <h1>{quote ? quote : 'No quote found...'}</h1>
-      {author && <h2>- {author}</h2>}
-      <button onClick={fetchQuote}>Get Quote Using Handler</button>
+      <h1>{quote.text ? quote.text : 'No quote found...'}</h1>
+      {quote.author && <h2>- {quote.author}</h2>}
+      <button onClick={fetchQuote}>Get Quote</button>
     </div>
   )
 }

@@ -7,7 +7,7 @@ import {
   ListItemIcon,
 } from '@mui/material'
 
-import CommentIcon from '@mui/icons-material/Comment'
+import DeleteIcon from '@mui/icons-material/Delete'
 
 const TodoItem = ({
   todo: { id, text, completed },
@@ -21,7 +21,7 @@ const TodoItem = ({
       key={id}
       secondaryAction={
         <IconButton edge='end' aria-label='comments' onClick={removeTodo}>
-          <CommentIcon />
+          <DeleteIcon />
         </IconButton>
       }
       disablePadding
